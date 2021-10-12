@@ -1,0 +1,43 @@
+
+@keyframes esconder {
+
+    0%{
+        top: -100;
+        background:$primary-color;
+    }
+
+    20%{
+        top: -90;
+    }
+
+    100%{
+        top: -300;
+        background:$primary-color;
+    }
+
+}
+
+
+@keyframes mostrar{
+
+    0%{
+        top: -300;
+    }
+
+    60%{
+        top: -90;
+    }
+    100%{
+        top: -100;
+        
+    }
+
+}
+@keyframes separador {
+    0%{
+        padding:0 50px 0 0;
+    }
+    50%{
+        padding: 150px 50px 150px 0;
+    }
+}

@@ -1,0 +1,54 @@
+@import 'variables';
+
+header{
+
+    background-color: $primary-color;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom:-3;
+
+    nav{
+
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        font-size: 1.7em;
+
+        section{
+
+            margin: 20px 0;
+            display: inherit;
+            align-items: center;
+            gap: 20px;
+
+            h1{
+
+                span{
+                    color: $neutral-color;
+                }
+
+                color: $text-color;
+                font-size: 1.5em;
+                text-align: center;
+            }
+            
+            img{
+
+                height: 100px;
+            }
+
+            ul{
+
+                display: none;
+                color: $text-color;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                list-style: none;
+                gap:50px;
+
+            }
+        }
+        
+    }
+}

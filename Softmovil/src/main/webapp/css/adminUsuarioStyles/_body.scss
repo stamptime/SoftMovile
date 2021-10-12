@@ -1,0 +1,113 @@
+
+@import 'keyframes';
+
+main{
+
+    position: relative;
+    display: flex;
+    height: 100%;
+    margin: 10px;
+    button{
+        cursor: pointer;
+    }
+
+    .container{
+
+        display: flex;
+        margin: 10px 0 10px 10px;
+        border: 0.6px solid rgba(165, 149, 229, 0.5);
+        border-radius:22px;
+        width: 93%;
+        box-shadow: 1px 0px 10px 0px rgba(165, 149, 229, 0.5);
+
+        // Contenedor correspondiente al formulario
+        .form{
+
+            width: 25%;
+            border-bottom-left-radius: 22px;
+            border-top-left-radius: 22px;
+            border-right: 1px solid rgba(165, 149, 229, 0.5);
+
+            .form-container{
+                margin: 30px;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+
+                h1{
+                    font-size:2em;
+                    text-align: center;
+                    margin-bottom: 30px;
+                    color: $secundary-color;
+                    font-weight: bold;
+                }
+                p{
+                    font-size:1em;
+                    text-align: center;
+                    margin-bottom: 35px;
+                }
+                label{
+                    margin-left:10px ;
+                }
+
+                input{
+                    border-radius:50px;
+                    border: 1px solid $primary-color;
+                    height:40px;
+                    width:100%;
+                    outline: none;
+                    text-indent: 15px;
+                    margin: 2px 0 10px 0;
+                }
+
+                div{
+                    margin-top:20px;
+                    display:flex;
+                    justify-content: center;
+                    gap: 20px;
+                    button{
+                        
+                        background-color:#7879F1;
+                        color: $text-color;
+                        font-size:1em;
+                        font-weight:bold;
+                        width:48%;
+                        height:40px;
+                        border-radius: 50px;
+                    }
+                }
+
+            }
+            
+        }
+
+    // Contenedor correspondiente a la tabla
+
+        .table{
+            width:70%;
+            .table-container{
+                margin:100px 40px 0px 40px;
+                table{
+                    width: 100%;
+                    border-collapse:separate;
+                    border-spacing: 0px;
+                
+                    th{
+                        text-align: left;
+                        border-bottom: 2px solid $primary-color;
+                        color: #8E61D9;
+                        padding-bottom:5px;
+
+                    }
+                    td{
+                        padding: 15px 0 10px 0;
+                        border-top: 1px solid
+                        $primary-color;
+                    }
+
+                }
+            }
+        }
+    }
+}

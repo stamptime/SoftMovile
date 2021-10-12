@@ -1,0 +1,68 @@
+@import 'variables';
+// Estilos de la barra de navegacion
+.menu-options{
+        
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-end;
+
+    right: 20px;
+    margin: 3vw 0;
+    gap: 10px;
+
+    button{
+        
+        display: flex;
+        justify-content: space-around;
+        font-size:10px;
+        width: 70px;
+        height: 50px;
+        gap: 20px;
+        align-items: center;
+        background-color: white;
+        border: 3.5px solid $primary-color;
+        border-radius: 50px;
+        
+
+        span{
+            display: none;
+            font-size: 1.9em;
+            font-weight: bold;
+            color: $text-color;
+        }
+        img{
+            width: 30px;
+        }
+    }
+
+    .btn-clicked{
+        background-color: $primary-color;
+        animation-name:btn-mostrar;
+        animation-duration: 500ms;
+        animation-fill-mode: forwards;
+        justify-content:space-between;
+        transition: 500ms;
+
+        span{
+            display: block;
+            color: $text-color;
+            margin-left: 15px;
+        }
+        img{
+            margin-right: 15px;
+        }
+    }
+
+    .btn-unclicked{
+        animation-name:btn-ocultar;
+        animation-duration: 500ms;
+        animation-fill-mode: forwards;
+        span{
+            display: none;
+            color: $text-color;
+        }
+        transition: 500ms;
+    }
+}

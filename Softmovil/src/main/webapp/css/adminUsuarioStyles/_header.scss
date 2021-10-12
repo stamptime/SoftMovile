@@ -1,0 +1,21 @@
+@import 'variables';
+
+header{
+    background-color: $primary-color;
+    height: 80px;
+
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 15 30;
+        
+        .logo{
+            height: 50px;
+        }
+        .sandwich{
+            width: 35px;
+            height: auto;
+        }
+    }
+}
