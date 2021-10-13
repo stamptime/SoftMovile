@@ -702,6 +702,8 @@ public class Controlador extends HttpServlet {
 				ventas.setIva_venta(subtotaliva);
 				ventas.setValor_venta(acusubtotal);
 				ventas.setTotal_venta(totalapagar);
+				ventas.setId_venta(0L);
+				
 				
 				
 				int respuesta=0;

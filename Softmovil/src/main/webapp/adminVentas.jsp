@@ -116,7 +116,7 @@
 	</div>
 	<div class="card-footer d-flex">
 		<div class="col-md-8">
-			<a class="btn btn-success" href="Controlador?menu=adminVentas&accion=GenerarVenta&cedulacliente=${clientesSeleccionado.getCedula_cliente()}&UsuarioActivo=${usuarioSeleccionado.getCedula_usuario()}&numerofactura=${numerofactura}">Generar Venta</a>
+			<a class="btn btn-success" onclick="print()" href="Controlador?menu=adminVentas&accion=GenerarVenta&cedulacliente=${clientesSeleccionado.getCedula_cliente()}&UsuarioActivo=${usuarioSeleccionado.getCedula_usuario()}&numerofactura=${numerofactura}">Generar Venta</a>
 			<a class="btn btn-danger" hrfe="Controlador?menu=adminVentas&accion=NuevaVenta">Nueva Venta</a>
 		</div>
 	</div>

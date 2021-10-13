@@ -2,6 +2,7 @@ package co.edu.unibosque.softmovil;
 
 public class Ventas {
 	
+	private Long id_venta;
 	private Long codigo_venta;
 	private Long cedula_cliente;
 	private Long cedula_usuario;
@@ -44,6 +45,13 @@ public class Ventas {
 	}
 	public void setValor_venta(Double valor_venta) {
 		this.valor_venta = valor_venta;
+	}
+	
+	public Long getId_venta() {
+		return id_venta;
+	}
+	public void setId_venta(Long id_venta) {
+		this.id_venta = id_venta;
 	}
 	
 }

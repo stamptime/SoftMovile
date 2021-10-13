@@ -28,7 +28,9 @@ public class TestJSONVentas {
 		http.setRequestProperty("Accept", "application/json");
 		http.setRequestProperty("Content-Type", "application/json");
 
-		String data = "{" + "\"codigo_venta\":\"" + ventas.getCodigo_venta()
+		String data = "{" 
+						  + "\"id_venta\":\""
+						  + "\",\"codigo_venta\": \"" + ventas.getCodigo_venta()
 						  + "\",\"cedula_cliente\": \"" + ventas.getCedula_cliente()
 						  + "\",\"cedula_usuario\": \"" + ventas.getCedula_usuario()
 						  + "\",\"iva_venta\":\"" + ventas.getIva_venta()

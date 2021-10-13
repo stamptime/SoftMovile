@@ -1,12 +1,15 @@
 package co.edu.unbosque.softmovilBack.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Ventas {
 	
-	@Id 
+	@GeneratedValue @Id 
+	private Long id_venta;
+	
 	private Long codigo_venta;
 	private Long cedula_cliente;
 	private Long cedula_usuario;
@@ -49,6 +52,12 @@ public class Ventas {
 	}
 	public void setValor_venta(Double valor_venta) {
 		this.valor_venta = valor_venta;
+	}
+	public Long getId_venta() {
+		return id_venta;
+	}
+	public void setId_venta(Long id_venta) {
+		this.id_venta = id_venta;
 	}
 	
 }
