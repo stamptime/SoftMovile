@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/Controlador")
 public class Controlador extends HttpServlet {
+	
+	
 	private static final long serialVersionUID = 1L;
 	
 	//**************Variables generales***************
@@ -21,6 +23,9 @@ public class Controlador extends HttpServlet {
 	double precio=0, valor_iva=0, iva=0, subtotaliva=0, acusubtotal=0;
 	long numfac=0, codProducto=0;
 	int cantidad=0, item=0;
+	
+	int bandera = 0;
+	IdUsuario idUsuario = new IdUsuario();
 	
 	
 	String descripcion, cedulaCliente;
@@ -148,6 +153,10 @@ public class Controlador extends HttpServlet {
 
 	//**********************************************
 	
+	public void colocarId(HttpServletRequest request, HttpServletResponse response) {
+		idUsuario.setId( request.getParameter("UsuarioActivo"));
+		System.out.println("Usuario activo: " + idUsuario.getId());
+	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -155,15 +164,23 @@ public class Controlador extends HttpServlet {
 		String menu = request.getParameter("menu");
 		String accion = request.getParameter("accion");
 		
+		//Anexadas estas dos lineas para el ingreso a ventas ----
+		String usuarioActivo = request.getParameter("UsuarioActivo");
+		request.setAttribute("usuarioActivo",usuarioActivo);
+		//----------------------------
+		System.out.println("Usuario activo: "+ usuarioActivo);
 		
 		
 		//********************************************************************************************************************
-		
-
+		if(bandera == 0) {
+			colocarId(request,response);
+			bandera = 1;
+		}
 		switch (menu) {
 		
 		case "adminUsuario":
-
+			
+			
 			if (accion.equals("Listar")) {
 				try {
 
@@ -181,13 +198,12 @@ public class Controlador extends HttpServlet {
 				usuario.setEmail_usuario(request.getParameter("txtemail"));
 				usuario.setPassword(request.getParameter("txtpassword"));
 				usuario.setUsuario(request.getParameter("txtusuario"));
-				
 				int res = 0;
 				
 				try {
 					res = TestJSON.postJSON(usuario);
 					if (res == 200) {
-						request.getRequestDispatcher("Controlador?menu=adminUsuario&accion=Listar").forward(request,
+						request.getRequestDispatcher("Controlador?menu=adminUsuario&accion=Listar&UsuarioActivo="+ usuarioActivo).forward(request,
 								response);
 					} else {
 						System.out.println("Error al agregar registro STATUS: " + res);
@@ -272,6 +288,12 @@ public class Controlador extends HttpServlet {
 			if (accion.equals("Listar")) {
 				try {
 					ArrayList<Proveedores> lista = TestJSONProveedores.getJSON();
+					
+//					//Anexadas estas dos lineas para el ingreso a ventas ----
+//					String usuarioActivo = request.getParameter("UsuarioActivo");
+//					request.setAttribute("usuarioActivo",usuarioActivo);
+//					//----------------------------
+					
 					request.setAttribute("lista", lista);
 
 				} catch (Exception e) {
@@ -292,7 +314,7 @@ public class Controlador extends HttpServlet {
 					respuesta = TestJSONProveedores.postJSON(proveedor);
 					if (respuesta == 200) {
 
-						request.getRequestDispatcher("Controlador?menu=adminProveedores&accion=Listar").forward(request,
+						request.getRequestDispatcher("Controlador?menu=adminProveedores&accion=Listar&UsuarioActivo="+ idUsuario.getId()).forward(request,
 								response);
 
 					} else {
@@ -319,7 +341,7 @@ public class Controlador extends HttpServlet {
 					PrintWriter write = response.getWriter();
 
 					if (respuesta == 200) {
-						request.getRequestDispatcher("Controlador?menu=adminProveedores&accion=Listar").forward(request,
+						request.getRequestDispatcher("Controlador?menu=adminProveedores&accion=Listar&UsuarioActivo="+ idUsuario.getId()).forward(request,
 								response);
 
 					} else {
@@ -345,8 +367,8 @@ public class Controlador extends HttpServlet {
 						if (idLista.equals(idParametro)) {
 							System.out.println("ingrese");
 							request.setAttribute("proveedoresSeleccionado", proveedor);
-							request.getRequestDispatcher("Controlador?menu=adminProveedores&accion=Listar")
-									.forward(request, response);
+							request.getRequestDispatcher("Controlador?menu=adminProveedores&accion=Listar&UsuarioActivo="+ idUsuario.getId()).forward(request,
+									response);
 						}
 
 					}
@@ -364,7 +386,7 @@ public class Controlador extends HttpServlet {
 					PrintWriter write = response.getWriter();
 
 					if (respuesta == 200) {
-						request.getRequestDispatcher("Controlador?menu=adminProveedores&accion=Listar").forward(request,
+						request.getRequestDispatcher("Controlador?menu=adminProveedores&accion=Listar&UsuarioActivo="+ idUsuario.getId()).forward(request,
 								response);
 					} else {
 						write.println("Error: " + respuesta);
@@ -383,6 +405,12 @@ public class Controlador extends HttpServlet {
 			if (accion.equals("Listar")) {
 				try {
 					ArrayList<Clientes> lista = TestJSONClientes.getJSON();
+					
+//					//Anexadas estas dos lineas para el ingreso a ventas ----
+//					String usuarioActivo = request.getParameter("UsuarioActivo");
+//					request.setAttribute("usuarioActivo",usuarioActivo);
+//					//----------------------------
+					
 					request.setAttribute("lista", lista);
 
 				} catch (Exception e) {
@@ -403,7 +431,7 @@ public class Controlador extends HttpServlet {
 					respuesta = TestJSONClientes.postJSON(cliente);
 					if (respuesta == 200) {
 
-						request.getRequestDispatcher("Controlador?menu=adminClientes&accion=Listar").forward(request,
+						request.getRequestDispatcher("Controlador?menu=adminClientes&accion=Listar&UsuarioActivo="+idUsuario.getId()).forward(request,
 								response);
 
 					} else {
@@ -430,7 +458,7 @@ public class Controlador extends HttpServlet {
 					PrintWriter write = response.getWriter();
 
 					if (respuesta == 200) {
-						request.getRequestDispatcher("Controlador?menu=adminClientes&accion=Listar").forward(request,
+						request.getRequestDispatcher("Controlador?menu=adminClientes&accion=Listar&UsuarioActivo="+idUsuario.getId()).forward(request,
 								response);
 
 					} else {
@@ -455,8 +483,8 @@ public class Controlador extends HttpServlet {
 						if (idLista.equals(idParametro)) {
 
 							request.setAttribute("clienteSeleccionado", cliente);
-							request.getRequestDispatcher("Controlador?menu=adminClientes&accion=Listar")
-									.forward(request, response);
+							request.getRequestDispatcher("Controlador?menu=adminClientes&accion=Listar&UsuarioActivo="+idUsuario.getId()).forward(request,
+									response);
 						}
 
 					}
@@ -474,7 +502,7 @@ public class Controlador extends HttpServlet {
 					PrintWriter write = response.getWriter();
 
 					if (respuesta == 200) {
-						request.getRequestDispatcher("Controlador?menu=adminClientes&accion=Listar").forward(request,
+						request.getRequestDispatcher("Controlador?menu=adminClientes&accion=Listar&UsuarioActivo="+idUsuario.getId()).forward(request,
 								response);
 					} else {
 						write.println("Error: " + respuesta);
@@ -494,7 +522,12 @@ public class Controlador extends HttpServlet {
 				try {
 					ArrayList<Productos> lista = TestJSONProductos.getJSON();
 					request.setAttribute("lista", lista);
-
+					
+//					//Anexadas estas dos lineas para el ingreso a ventas ----
+//					String usuarioActivo = request.getParameter("UsuarioActivo");
+//					request.setAttribute("usuarioActivo",usuarioActivo);
+//					//----------------------------
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -513,7 +546,7 @@ public class Controlador extends HttpServlet {
 					respuesta = TestJSONProductos.postJSON(producto);
 					if (respuesta == 200) {
 
-						request.getRequestDispatcher("Controlador?menu=adminProductos&accion=Listar").forward(request,
+						request.getRequestDispatcher("Controlador?menu=adminProductos&accion=Listar&UsuarioActivo=" + idUsuario.getId()).forward(request,
 								response);
 
 					} else {
@@ -541,7 +574,7 @@ public class Controlador extends HttpServlet {
 					PrintWriter write = response.getWriter();
 
 					if (respuesta == 200) {
-						request.getRequestDispatcher("Controlador?menu=adminProductos&accion=Listar").forward(request,
+						request.getRequestDispatcher("Controlador?menu=adminProductos&accion=Listar&UsuarioActivo=" + idUsuario.getId()).forward(request,
 								response);
 
 					} else {
@@ -561,13 +594,14 @@ public class Controlador extends HttpServlet {
 
 				try {
 					ArrayList<Productos> lista1 = TestJSONProductos.getJSON();
-
+					
 					for (Productos producto : lista1) {
 						String idLista = String.valueOf(producto.getCodigo_producto());
 						if (idLista.equals(idParametro)) {
 							
 							request.setAttribute("productoSeleccionado", producto);
-							request.getRequestDispatcher("Controlador?menu=adminProductos&accion=Listar").forward(request, response);
+							request.getRequestDispatcher("Controlador?menu=adminProductos&accion=Listar&UsuarioActivo=" + idUsuario.getId()).forward(request,
+									response);
 						}
 
 					}
@@ -584,7 +618,7 @@ public class Controlador extends HttpServlet {
 					respuesta = TestJSONProductos.deleteJSON(id);
 					PrintWriter write = response.getWriter();
 					if (respuesta == 200) {
-						request.getRequestDispatcher("Controlador?menu=adminProductos&accion=Listar").forward(request,
+						request.getRequestDispatcher("Controlador?menu=adminProductos&accion=Listar&UsuarioActivo=" + idUsuario.getId()).forward(request,
 								response);
 					} else {
 						write.println("Error: " + respuesta);
@@ -738,6 +772,47 @@ public class Controlador extends HttpServlet {
 				
 			request.getRequestDispatcher("/adminVentas.jsp").forward(request, response);
 			
+			break;
+			
+		case "adminReportes":
+			
+			
+			Double total_total = 0.0;
+			try {
+				List<Detalle_Venta> listaDetalles = TestJSONDetalleVenta.getJSON();
+				List<Usuarios> listaUsuarios = TestJSON.getJSON();
+				List<Ventas> listaVentas = TestJSONVentas.getJSON();
+				List<Clientes> listaClientes = TestJSONClientes.getJSON();
+				List<Productos> listaProductos = TestJSONProductos.getJSON();
+				List<Proveedores> listaProveedores = TestJSONProveedores.getJSON();
+				
+				for(Ventas ventas : listaVentas) {
+					total_total += ventas.getTotal_venta();
+				}
+				
+//				//Anexadas estas dos lineas para el ingreso a ventas ----
+//				String usuarioActivo = request.getParameter("UsuarioActivo");
+//				request.setAttribute("usuarioActivo",idUsuario.getId());
+//				//----------------------------
+//				
+				request.setAttribute("listausuarios", listaUsuarios);
+				request.setAttribute("listaclientes", listaClientes);
+				request.setAttribute("listadetalles", listaDetalles);
+				request.setAttribute("listaventas", listaVentas);
+				request.setAttribute("listaproductos", listaProductos);
+				request.setAttribute("listaproveedores", listaProveedores);
+				request.setAttribute("totaltotal",total_total);
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			System.out.println("Estoy en reportes");
+
+			request.getRequestDispatcher("/adminReportes.jsp").forward(request, response);
+			break;
+			
+		case "adminMenu":
+				request.getRequestDispatcher("/adminMenu.jsp").forward(request, response);
 			break;
 			default:
 		}

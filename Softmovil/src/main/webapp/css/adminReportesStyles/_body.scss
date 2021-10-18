@@ -1,0 +1,166 @@
+
+@import 'keyframes';
+
+main{
+
+    position: relative;
+    display: flex;
+    height: 1000px;
+    margin: 10px;
+    button{
+        cursor: pointer;
+    }
+
+    .container{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px 0 10px 10px;
+        border: 0.6px solid rgba(165, 149, 229, 0.5);
+        border-radius:22px;
+        width: 93%;
+        box-shadow: 1px 0px 10px 0px rgba(165, 149, 229, 0.5);
+
+        // Contenedor correspondiente al formulario
+        .form{
+
+            width: 80%;
+            border-bottom-left-radius: 22px;
+            border-top-left-radius: 22px;
+            align-self: flex-start;
+
+            .form-container{
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+
+                h1{
+                    font-size:2em;
+                    text-align: center;
+                    margin-bottom: 30px;
+                    color: $secundary-color;
+                    font-weight: bold;
+                }
+                p{
+                    font-size:1em;
+                    text-align: center;
+                    margin-bottom: 35px;
+                }
+                label{
+                    margin-left:10px ;
+                }
+
+                input{
+                    border-radius:50px;
+                    border: 1px solid $primary-color;
+                    height:40px;
+                    width:100%;
+                    outline: none;
+                    text-indent: 15px;
+                }
+
+                div{
+
+                    margin: 10px;
+                    display:flex;
+                    flex-wrap:wrap;
+                    gap: 20px;
+
+                    button{
+                        
+                        background-color:#7879F1;
+                        color: $text-color;
+                        font-size:1em;
+                        font-weight:bold;
+                        width:150px;
+                        height:50px;
+                        border-radius: 50px;
+                        transition: 500ms;
+                    }
+
+                    button:focus {
+                        background-color:transparent;
+                        width:200px;
+                        border: 2px $primary-color solid;
+                        color: $primary-color;
+                        font-size:1.2em;
+                        transition: 500ms;
+                    }
+            
+                }
+
+            }
+            
+        }
+
+    // Contenedor correspondiente a la tabla
+
+        .table{
+            margin-top:80px ;
+            width:90%;
+            padding: 50px;
+            border: 1px $primary-color solid;
+            border-radius: 15px;
+            .table-container{
+                margin:30px 40px 0px 40px;
+                table{
+                    width: 100%;
+                    border-collapse:separate;
+                    border-spacing: 0px;
+                    
+                
+                    th{
+                        text-align: left;
+                        border-bottom: 2px solid $primary-color;
+                        color: #8E61D9;
+                        padding-bottom:5px;
+
+                    }
+                    td{
+                        padding: 15px 0 10px 0;
+                        border-top: 1px solid
+                        $primary-color;
+
+                    }
+                    
+                    .total{
+
+                        td{
+                            border: 0 ;
+                        }
+
+
+
+                    }
+
+                    #total-cell{
+
+                        font-size:1.1em;
+                        margin-top: 20px;
+                        display: flex;
+                        gap: 20px;
+                        padding-left: 30px;
+                        border: 2px $primary-color solid;
+                        border-radius: 30px;
+
+                        .total-numero{
+                            color: rgb(73, 73, 73);
+                        }
+
+                        .total-text{
+                            color: $secundary-color;
+                            font-weight: bold;
+                        }
+                    }
+
+                }
+            }
+        }
+        .hidden{
+            display: none;
+        }
+    }
+}

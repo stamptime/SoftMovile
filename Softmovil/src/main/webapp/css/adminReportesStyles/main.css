@@ -1,0 +1,355 @@
+header {
+  background-color: #853BFD;
+  height: 80px;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 15 30;
+}
+
+header nav .logo {
+  height: 50px;
+}
+
+header nav .sandwich {
+  width: 35px;
+  height: auto;
+}
+
+@-webkit-keyframes btn-mostrar {
+  0% {
+    width: 70px;
+    border: 0;
+  }
+  50% {
+    width: 200px;
+  }
+  100% {
+    width: 190px;
+  }
+}
+
+@keyframes btn-mostrar {
+  0% {
+    width: 70px;
+    border: 0;
+  }
+  50% {
+    width: 200px;
+  }
+  100% {
+    width: 190px;
+  }
+}
+
+@-webkit-keyframes btn-ocultar {
+  0% {
+    width: 190px;
+    border: 0;
+  }
+  50% {
+    width: 200px;
+  }
+  100% {
+    width: 70px;
+  }
+}
+
+@keyframes btn-ocultar {
+  0% {
+    width: 190px;
+    border: 0;
+  }
+  50% {
+    width: 200px;
+  }
+  100% {
+    width: 70px;
+  }
+}
+
+main {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 1000px;
+  margin: 10px;
+}
+
+main button {
+  cursor: pointer;
+}
+
+main .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px 0 10px 10px;
+  border: 0.6px solid rgba(165, 149, 229, 0.5);
+  border-radius: 22px;
+  width: 93%;
+  -webkit-box-shadow: 1px 0px 10px 0px rgba(165, 149, 229, 0.5);
+          box-shadow: 1px 0px 10px 0px rgba(165, 149, 229, 0.5);
+}
+
+main .container .form {
+  width: 80%;
+  border-bottom-left-radius: 22px;
+  border-top-left-radius: 22px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+main .container .form .form-container {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+main .container .form .form-container h1 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #A1A4F1;
+  font-weight: bold;
+}
+
+main .container .form .form-container p {
+  font-size: 1em;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+main .container .form .form-container label {
+  margin-left: 10px;
+}
+
+main .container .form .form-container input {
+  border-radius: 50px;
+  border: 1px solid #853BFD;
+  height: 40px;
+  width: 100%;
+  outline: none;
+  text-indent: 15px;
+}
+
+main .container .form .form-container div {
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 20px;
+}
+
+main .container .form .form-container div button {
+  background-color: #7879F1;
+  color: #ffff;
+  font-size: 1em;
+  font-weight: bold;
+  width: 150px;
+  height: 50px;
+  border-radius: 50px;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+main .container .form .form-container div button:focus {
+  background-color: transparent;
+  width: 200px;
+  border: 2px #853BFD solid;
+  color: #853BFD;
+  font-size: 1.2em;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+main .container .table {
+  margin-top: 80px;
+  width: 90%;
+  padding: 50px;
+  border: 1px #853BFD solid;
+  border-radius: 15px;
+}
+
+main .container .table .table-container {
+  margin: 30px 40px 0px 40px;
+}
+
+main .container .table .table-container table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0px;
+}
+
+main .container .table .table-container table th {
+  text-align: left;
+  border-bottom: 2px solid #853BFD;
+  color: #8E61D9;
+  padding-bottom: 5px;
+}
+
+main .container .table .table-container table td {
+  padding: 15px 0 10px 0;
+  border-top: 1px solid #853BFD;
+}
+
+main .container .table .table-container table .total td {
+  border: 0;
+}
+
+main .container .table .table-container table #total-cell {
+  font-size: 1.1em;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  padding-left: 30px;
+  border: 2px #853BFD solid;
+  border-radius: 30px;
+}
+
+main .container .table .table-container table #total-cell .total-numero {
+  color: #494949;
+}
+
+main .container .table .table-container table #total-cell .total-text {
+  color: #A1A4F1;
+  font-weight: bold;
+}
+
+main .container .hidden {
+  display: none;
+}
+
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  border: 0;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+footer {
+  background-color: #853BFD;
+  height: 60px;
+  width: auto;
+}
+
+.menu-options {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  right: 20px;
+  margin: 3vw 0;
+  gap: 10px;
+}
+
+.menu-options button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 10px;
+  width: 70px;
+  height: 50px;
+  gap: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  border: 3.5px solid #853BFD;
+  border-radius: 50px;
+}
+
+.menu-options button span {
+  display: none;
+  font-size: 1.9em;
+  font-weight: bold;
+  color: #ffff;
+}
+
+.menu-options button img {
+  width: 30px;
+}
+
+.menu-options .btn-clicked {
+  background-color: #853BFD;
+  -webkit-animation-name: btn-mostrar;
+          animation-name: btn-mostrar;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.menu-options .btn-clicked span {
+  display: block;
+  color: #ffff;
+  margin-left: 15px;
+}
+
+.menu-options .btn-clicked img {
+  margin-right: 15px;
+}
+
+.menu-options .btn-unclicked {
+  -webkit-animation-name: btn-ocultar;
+          animation-name: btn-ocultar;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.menu-options .btn-unclicked span {
+  display: none;
+  color: #ffff;
+}
+/*# sourceMappingURL=main.css.map */

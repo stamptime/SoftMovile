@@ -104,31 +104,40 @@
 		</div>
 
 		<div class="menu-options">
-			<button id="btn-usuarios" class="btn-clicked">
-				<span>Usuarios</span> <img src="img/adminUsuarioAssets/Key.svg"
-					alt="">
+			<button id="btn-usuarios">
+				<span>Usuarios</span> 
+				<a href="Controlador?menu=adminUsuario&accion=Listar&UsuarioActivo=${usuarioActivo}"><img src="img/adminUsuarioAssets/Key.svg" alt=""></a>
 			</button>
+			
 			<button id="btn-clientes">
-				<span>Clientes</span> <img src="img/adminUsuarioAssets/Contacts.svg"
-					alt="">
+				<span>Clientes</span>
+				<a href="Controlador?menu=adminClientes&accion=Listar&UsuarioActivo=${usuarioActivo}"><img src="img/adminUsuarioAssets/Contacts.svg" alt=""></a>
 			</button>
+
 			<button id="btn-proveedores">
-				<span>Proveedores</span> <img
-					src="img/adminUsuarioAssets/Settings.svg" alt="">
+				<span>Proveedores</span>
+				<a href="Controlador?menu=adminProveedores&accion=Listar&UsuarioActivo=${usuarioActivo}"><img src="img/adminUsuarioAssets/Settings.svg" alt=""></a>
 			</button>
+			
 			<button id="btn-ventas">
-				<span>Ventas</span> <img src="img/adminUsuarioAssets/Cash App.svg"
-					alt="">
+				<span>Ventas</span> 
+				<a href="Controlador?menu=adminVentas&accion=default&UsuarioActivo=${usuarioActivo}"><img src="img/adminUsuarioAssets/Cash App.svg" alt=""></a>
 			</button>
-			<button id="btn-productos">
-				<span>Productos</span> <img
-					src="img/adminUsuarioAssets/Briefcase.svg" alt="">
+			
+			<button id="btn-productos" class="btn-clicked">
+				<span>Productos</span> 
+				<a href="Controlador?menu=adminProductos&accion=Listar&UsuarioActivo=${usuarioActivo}"><img src="img/adminUsuarioAssets/Briefcase.svg" alt=""></a>
 			</button>
+			
 			<button id="btn-reportes">
-				<span>Reportes</span> <img src="img/adminUsuarioAssets/Bookmark.svg"
-					alt="">
+				<span>Reportes</span> 
+				<a href="Controlador?menu=adminReportes&accion=Listar&UsuarioActivo=${usuarioActivo}"><img src="img/adminUsuarioAssets/Bookmark.svg" alt=""></a>
 			</button>
-		</div> 
+			
+			<a href="SoftmovielServerlet?username=&password=&accion=Ingresar"><button id="btn-reportes">
+					<span></span>
+			</button></a>	
+		</div>   
 		
 	</main>
 	<footer> </footer>

@@ -1,0 +1,25 @@
+@keyframes btn-mostrar {
+   0%{
+       width: 70px;
+       border: 0;
+    }
+    50%{
+        width:200px;
+    }
+   100%{
+        width:190px;
+   } 
+}
+
+@keyframes btn-ocultar {
+    0%{
+        width:190px;
+        border: 0;
+     }
+     50%{
+         width:200px;
+     }
+    100%{
+        width:70px;
+    } 
+ }

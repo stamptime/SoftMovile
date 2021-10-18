@@ -40,19 +40,19 @@
 			<section class="section-buttons">
 				
 					<button>
-					    <a href="Controlador?menu=adminUsuario&accion=Listar">Usuarios</a>
+					    <a href="Controlador?menu=adminUsuario&accion=Listar&UsuarioActivo=${usuario.getCedula_usuario()}">Usuarios</a>
 						<img src="img/adminPanelAssets/Key.svg" alt="">
 					</button>
 					<button>
-						 <a href="Controlador?menu=adminClientes&accion=Listar">Clientes</a> 
+						 <a href="Controlador?menu=adminClientes&accion=Listar&UsuarioActivo=${usuario.getCedula_usuario()}">Clientes</a> 
 						<img src="img/adminPanelAssets/Contacts.svg" alt="">
 					</button>
 					<button>
-						<a href="Controlador?menu=adminProveedores&accion=Listar">Proveedores</a>
+						<a href="Controlador?menu=adminProveedores&accion=Listar&UsuarioActivo=${usuario.getCedula_usuario()}">Proveedores</a>
 						<img src="img/adminPanelAssets/Settings.svg" alt="">
 					</button>
 					<button>
-						<a href="Controlador?menu=adminProductos&accion=Listar">Productos </a>
+						<a href="Controlador?menu=adminProductos&accion=Listar&UsuarioActivo=${usuario.getCedula_usuario()}">Productos </a>
 						<img src="img/adminPanelAssets/Briefcase.svg" alt="">
 					</button>
 					<button>
@@ -60,7 +60,8 @@
 						<img src="img/adminPanelAssets/Cash App.svg" alt="">
 					</button>
 					<button>
-						Reportes <img src="img/adminPanelAssets/Bookmark.svg" alt="">
+						<a href="Controlador?menu=adminReportes&accion=Listar&UsuarioActivo=${usuario.getCedula_usuario()}">Reportes</a>
+						<img src="img/adminPanelAssets/Briefcase.svg" alt="">
 					</button>
 			<!---->
 			</section>
